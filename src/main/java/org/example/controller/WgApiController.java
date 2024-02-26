@@ -1,6 +1,7 @@
 package org.example.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.example.dto.ClanReserveList;
 import org.example.service.WgApiService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,8 +14,8 @@ public class WgApiController {
     private final WgApiService wgApiService;
 
     @GetMapping(value = "/reserves")
-    public String getReserves(){
+    public ClanReserveList getReserves(){
         return wgApiService.getStats()
-                .body(String.class);
+                .body(ClanReserveList.class);
     }
 }

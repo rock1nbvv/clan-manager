@@ -9,11 +9,10 @@ import org.springframework.web.client.RestClient;
 @RequiredArgsConstructor
 public class WgApiService {
 
-    private final RestClient restClient;
+    private final RestClient restClient; //todo instantiate client here
     private final WgApiConfigurationProperties wgApiConfigurationProperties;
 
     public RestClient.ResponseSpec getStats() {
-
         return restClient.get()
                 .uri("/wot/stronghold/clanreserves/",
                         uriBuilder -> uriBuilder

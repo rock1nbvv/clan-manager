@@ -1,6 +1,7 @@
 package org.example.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import java.util.ArrayList;
@@ -9,8 +10,10 @@ import java.util.ArrayList;
 @JsonInclude
 public class ClanReserve {
     String name;
-    String bonus_type;
+    @JsonProperty("bonus_type")
+    String bonusType;
     Boolean disposable;
     String type;
-    ArrayList<StockItem> in_stock;
+    @JsonProperty("in_stock")
+    ArrayList<StockItem> inStock;
 }

@@ -36,7 +36,7 @@ public class HttpClientConfig {
     @Bean
     public RestClient restClient() {
         return RestClient.builder()
-                .baseUrl(wgApiUrl)
+                .baseUrl(wgApiUrl) //todo move Url
                 .build();
     }
 }
